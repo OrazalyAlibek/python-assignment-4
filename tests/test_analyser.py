@@ -35,6 +35,7 @@ class TestAnalyser(unittest.TestCase):
         result1 = analyser.result.copy()
         analyser.analyse()
         result2 = analyser.result.copy()
+        self.assertEqual(result1, result2)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

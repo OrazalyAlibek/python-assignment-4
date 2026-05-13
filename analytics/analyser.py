@@ -1,7 +1,7 @@
 class DataAnalyser:
     def __init__(self, students):
         self.students = students
-        self.result = []
+        self.result = {}
 
     def analyse(self):
         print("Not implemented - use a child class")
@@ -51,10 +51,10 @@ class CountryAnalyser(DataAnalyser):
 
     def analyse(self):
         try:
-            valid = list(filter(lambda s: s.get("Country", "").strip() != "", self.students))
+            valid = list(filter(lambda s: s.get("country", "").strip() != "", self.students))
             counts = {}
             for s in valid:
-                c = s["Country"]
+                c = s["country"]
                 counts[c] = counts.get(c, 0) + 1
 
             top_3 = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:3]
@@ -82,4 +82,4 @@ class CountryAnalyser(DataAnalyser):
         print("="*30)
 
     def __str__(self):
-        print(f"CountryAnalyser: Country Analysis, {len(self.students)} students")
+        return f"CountryAnalyser: Country Analysis, {len(self.students)} students"

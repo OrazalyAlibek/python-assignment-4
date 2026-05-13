@@ -6,7 +6,7 @@ class ResultSaver:
         self.result = result
         self.filepath = filepath
 
-    def save_result(self):
+    def save_json(self):
         try:
             os.makedirs(os.path.dirname(self.filepath), exist_ok=True)
 

@@ -3,9 +3,9 @@ class Report:
         self.analyser = analyser
         self.saver = saver
 
-    def generate_report(self):
+    def generate(self):
         print(f"Generating report...")
         self.analyser.analyse()
-        self.analyser.print_result()
+        self.analyser.print_results()
         self.saver.save_json()
         print("Report complete!")

@@ -27,7 +27,7 @@ print()
 
 #Task 4
 saver = ResultSaver(analyser.result, 'output/result.json')
-report = Report(analyser.result, saver)
+report = Report(analyser, saver)
 report.generate()
 print()
 
